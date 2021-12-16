@@ -19,29 +19,42 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+//
+//    @IBAction func button1(_ sender: Any) {
+//        changebuttonsIsSelected(UIButton: Button1)
+//    }
+//
+//    @IBAction func button2(_ sender: Any) {
+//        changebuttonsIsSelected(UIButton: Button2)
+//    }
+//
+//    @IBAction func button3(_ sender: Any) {
+//        changebuttonsIsSelected(UIButton: Button3)
+//    }
+//
+//    @IBAction func button4(_ sender: Any) {
+//        changebuttonsIsSelected(UIButton: Button4)
+//    }
 
-    @IBAction func button1(_ sender: Any) {
-        changebuttonsIsSelected(UIButton: Button1)
-    }
-
-    @IBAction func button2(_ sender: Any) {
-        changebuttonsIsSelected(UIButton: Button2)
-    }
-
-    @IBAction func button3(_ sender: Any) {
-        changebuttonsIsSelected(UIButton: Button3)
-    }
-
-    @IBAction func button4(_ sender: Any) {
-        changebuttonsIsSelected(UIButton: Button4)
-    }
-
-    func changebuttonsIsSelected(UIButton:UIButton){
-        let buttons = [Button1,Button2,Button3,Button4]
-        buttons.map(){
-            $0?.isSelected = false
+    @IBAction private func change(sender: UIButton) {
+        var buttons:[UIButton] = [Button1,Button2,Button3,Button4]
+        buttons.forEach{ (button: UIButton) in
+            button.isSelected = (button === sender)
         }
-        UIButton.isSelected = true
+
+        buttons.map(){
+            if $0.isSelected == true{
+
+            }
+        }
     }
+//
+//    func changebuttonsIsSelected(UIButton:UIButton){
+//        let buttons = [Button1,Button2,Button3,Button4]
+//        buttons.map(){
+//            $0?.isSelected = false
+//        }
+//        UIButton.isSelected = true
+//    }
 }
 
